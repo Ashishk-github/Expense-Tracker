@@ -1,4 +1,14 @@
-var z=0;
+if(localStorage===null){
+    var z=0;
+}else{
+    var z=0;
+    for(x of Object.keys(localStorage)){
+        if(z<parseInt(x)){
+            z=parseInt(x);
+        }
+    }
+}
+
 function saveToLocalStorage(event) {
     event.preventDefault();
     const amt = event.target.amt.value;
@@ -11,6 +21,7 @@ function saveToLocalStorage(event) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+    z++;
     const localStorageObj = localStorage;
     const localstoragekeys  = Object.keys(localStorageObj)
 
